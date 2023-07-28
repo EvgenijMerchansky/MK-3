@@ -1,26 +1,39 @@
-import React, { FC, useState, useEffect } from 'react';
+import { FC, Dispatch, SetStateAction, useState, useEffect } from 'react';
 import './index.scss';
 import { Hero } from '../../models/Hero';
 import CardsGrid from "../../components/cardsGrid";
+import HeroPreview from "../../components/heroPreview";
+import TextBox from '../../components/textBox';
+import messages from '../../helpers/messages';
 
-type ChooseCharacterScreenProps = { heroes: Hero[] }
-type StateType<T> = [T, React.Dispatch<React.SetStateAction<T>>];
+type ChooseCharacterScreenProps = { heroes: Hero[], arenas: string[] }
+type StateType<T> = [T, Dispatch<SetStateAction<T>>];
 
-export const ChooseCharacterScreen: FC<ChooseCharacterScreenProps> = ({ heroes }) => {
+export const ChooseCharacterScreen: FC<ChooseCharacterScreenProps> = ({ heroes, arenas }) => {
   
-  const playersCount = 1; 
+  const playersCount: number = 2; 
   const defaultHero: Hero = { id: -1, name: "", icon: "", previewIcon: "" };
   const [playerOneHero, setPlayerOneHero]: StateType<Hero> = useState<Hero>(defaultHero);
   const [playerTwoHero, setPlayerTwoHero]: StateType<Hero> = useState<Hero>(defaultHero);
+  const [displayedHero, setDisplayedHero]: StateType<Hero> = useState<Hero>(defaultHero);
+  const [temporaryHero, setTemporaryHero]: StateType<Hero> = useState<Hero>(defaultHero);
+  const [arena, setArena]: StateType<string> = useState<string>("");
+  
   const [selectedHeroesCount, setSelectedHeroesCount]: StateType<number> = useState<number>(0);
 
   useEffect(() => {
+    const randomArena: string = getRandomArrayItem(arenas);
+    setArena(randomArena);
+  }, []);
+
+  useEffect(() => {
     if (playersCount < 2 && playerOneHero.id !== -1) {
-      setRandomHero();
+      const randomHero: Hero = getRandomArrayItem(heroes);
+      setPlayerTwoHero(randomHero);
     }
   }, [selectedHeroesCount]);
 
-  const setHero = (hero: Hero) => {
+  const setHero = (hero: Hero): void => {
     if (playersCount > 1) {
       if (playerOneHero.id === -1) {
         setPlayerOneHero(hero);
@@ -33,42 +46,26 @@ export const ChooseCharacterScreen: FC<ChooseCharacterScreenProps> = ({ heroes }
         return;
       }
     } else {
-      if (playerOneHero.id === -1) {
-        setPlayerOneHero(hero);
-        setSelectedHeroesCount(1);
-        return;
-      }
-      setPlayerTwoHero(hero);
-      return;
+      setPlayerOneHero(hero);
+      setSelectedHeroesCount(1);
     }
   }
 
-  const setRandomHero = () => {
-    const randomHeroIndex = Math.floor(Math.random() * ((heroes.length -1) - 0) + 0);
-    setHero(heroes[randomHeroIndex]);
+  const getRandomArrayItem = (array: any[]): any => {
+    const randomIndex: number = Math.floor(Math.random() * ((array.length -1) - 0) + 0);
+    return array[randomIndex];
   }
 
   return (
     <div className='contianer'>
-      <div className='static-content'>
-        <h1>SELECT YOUR FIGHTER</h1>
-      </div>
+      <TextBox message={messages.selectFighter.defaultMessage}/>
       <div className='content-wrapper'>
-        <div className='player-view'>
-          <h2>P1</h2>
-          <h4>{playerOneHero.id !== -1 ? `(${playerOneHero.id}) ${playerOneHero.name}` : null}</h4>
-        </div>
-        <CardsGrid heroes={heroes} defaultHero={defaultHero} setHero={setHero} playersCount={playersCount} selectedHeroesCount={selectedHeroesCount} />
-        <div className='player-view'>
-          <h2>P2</h2>
-          <h4>{playerTwoHero.id !== -1 ? `(${playerTwoHero.id}) ${playerTwoHero.name}` : null}</h4>   
-        </div>
+        <HeroPreview selectedHero={playerOneHero} firstHeroSelected={playerOneHero.id !== -1} displayedHero={displayedHero} />
+        <CardsGrid heroes={heroes} defaultHero={defaultHero} setHero={setHero} setDisplayedHero={setDisplayedHero} setTemporaryHero={setTemporaryHero} playersCount={playersCount} selectedHeroesCount={selectedHeroesCount} />
+        <HeroPreview selectedHero={playerTwoHero} firstHeroSelected={playerOneHero.id !== -1} defaultHero={temporaryHero} displayedHero={displayedHero} />
       </div>
-      <div className='static-content'>
-        <h3>KOMBAT ZONE: SOUL CHAMBER</h3>
-      </div>
+      <TextBox message={`${messages.kombatZone.defaultMessage}: ${arena}`}/>
     </div>
   )
 }
-
 export default ChooseCharacterScreen;

@@ -50,5 +50,17 @@ export default {
     selectHero: {
         id: "selectHero",
         defaultMessage: "selectHero"
+    },
+    selectFighter: {
+        id: "selectFighter",
+        defaultMessage: "SELECT YOUR FIGHTER"
+    },
+    kombatZone: {
+        id: "kombatZone",
+        defaultMessage: "KOMBAT ZONE"
+    },
+    player: {
+        id: "player",
+        defaultMessage: "PLAYER"
     }
 }

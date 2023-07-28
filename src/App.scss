@@ -1,5 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Raleway&display=swap');
+
+* {
+  font-family: 'Press Start 2P', cursive;
+  font-family: 'Raleway', sans-serif;
+}
+
 .App {
   text-align: center;
+  background: url('./assets/images/MKBG.jpg') no-repeat;
+  background-size: cover;
+  height: 100vh;
 
   .App-logo {
     height: 40vmin;
@@ -13,7 +23,6 @@
   }
 
   .App-header {
-    background-color: #282c34;
     min-height: 100vh;
     display: flex;
     flex-direction: column;

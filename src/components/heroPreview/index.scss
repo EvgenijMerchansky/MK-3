@@ -1,0 +1,37 @@
+.player-view {
+    width: 300px;
+
+    .player-view-title {
+        font-style: italic;
+        color: #777777;
+        text-shadow: 2px 2px 2px #000000;
+    }
+
+    .player-view-img {
+        width: 250px;
+        height: 500px;
+    }
+
+    .reverse-image {
+        -moz-transform: scale(-1, -1);
+        -o-transform: scale(-1, -1);
+        -webkit-transform: scale(-1, -1);
+        transform: scale(-1, 1);
+    }
+
+    .player-view-hero-name {
+        color: #777777;
+        font-size: 24px;
+        font-style: italic;
+        font-weight: 600;
+        text-shadow: 2px 2px 2px #000000;
+    }
+
+    .selected {
+        color: green;
+    }
+
+    .common {
+        color: grey;
+    }
+}
