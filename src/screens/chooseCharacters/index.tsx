@@ -6,13 +6,12 @@ import HeroPreview from "../../components/heroPreview";
 import TextBox from '../../components/textBox';
 import messages from '../../helpers/messages';
 
-type ChooseCharacterScreenProps = { heroes: Hero[], arenas: string[] }
+type ChooseCharactersScreenProps = { heroes: Hero[], arenas: string[], defaultHero: Hero, setSelectedHeroes: (selectedHeroes: Hero[]) => void }
 type StateType<T> = [T, Dispatch<SetStateAction<T>>];
 
-export const ChooseCharacterScreen: FC<ChooseCharacterScreenProps> = ({ heroes, arenas }) => {
+export const ChooseCharactersScreen: FC<ChooseCharactersScreenProps> = ({ heroes, arenas, defaultHero, setSelectedHeroes }) => {
   
   const playersCount: number = 2; 
-  const defaultHero: Hero = { id: -1, name: "", icon: "", previewIcon: "" };
   const [playerOneHero, setPlayerOneHero]: StateType<Hero> = useState<Hero>(defaultHero);
   const [playerTwoHero, setPlayerTwoHero]: StateType<Hero> = useState<Hero>(defaultHero);
   const [displayedHero, setDisplayedHero]: StateType<Hero> = useState<Hero>(defaultHero);
@@ -30,6 +29,7 @@ export const ChooseCharacterScreen: FC<ChooseCharacterScreenProps> = ({ heroes, 
     if (playersCount < 2 && playerOneHero.id !== -1) {
       const randomHero: Hero = getRandomArrayItem(heroes);
       setPlayerTwoHero(randomHero);
+      setSelectedHeroes([playerOneHero, randomHero]);
     }
   }, [selectedHeroesCount]);
 
@@ -43,6 +43,7 @@ export const ChooseCharacterScreen: FC<ChooseCharacterScreenProps> = ({ heroes, 
       if (playerTwoHero.id === -1) {
         setPlayerTwoHero(hero);
         setSelectedHeroesCount(2);
+        setSelectedHeroes([playerOneHero, hero]);
         return;
       }
     } else {
@@ -68,4 +69,4 @@ export const ChooseCharacterScreen: FC<ChooseCharacterScreenProps> = ({ heroes, 
     </div>
   )
 }
-export default ChooseCharacterScreen;
+export default ChooseCharactersScreen;
