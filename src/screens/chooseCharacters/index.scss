@@ -1,0 +1,14 @@
+.contianer {
+    width: 100%;
+
+    .content-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+
+        .player-view {
+            width: 200px;
+        }
+    }
+}
