@@ -1,0 +1,12 @@
+@import '../../helpers/_variables';
+
+.contianer {
+    width: $fullWidth;
+
+    .content-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+}

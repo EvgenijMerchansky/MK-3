@@ -1,0 +1,13 @@
+@import '../../helpers/_variables';
+
+.content {
+    width: auto;
+
+    .content-title {
+        padding: 20px 0 0 0;
+        font-style: italic;
+        color: #f0f0f0;
+        margin: 0;
+        text-shadow: 2px 2px 2px $blackColor;
+    }
+}

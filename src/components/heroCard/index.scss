@@ -1,0 +1,50 @@
+@import '../../helpers/_variables';
+
+.grid-body-row-cell {
+    background-color: $greyColor;
+    color: $whiteColor;
+    width: 130px;
+    height: 160px;
+    -webkit-box-shadow: inset 10px 10px 15px 2px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 10px 10px 15px 2px rgba(0,0,0,0.75);
+    box-shadow: inset 10px 10px 15px 2px rgba(0,0,0,0.75);
+    position: relative;
+
+    .hero-icon {
+        width: inherit;
+        height: inherit;
+        object-fit: cover;
+        background-size: contain;
+    }
+
+    .player-number {
+        position: absolute;
+        left: 38%;
+        top: 30%;
+        font-size: 50px;
+        font-weight: 900;
+        width: 40px;
+        height: 40px;
+        font-style: italic;
+    }
+
+    .player-number-green {
+        color: $greenColor;
+    }
+
+    .player-number-red {
+        color: $redColor;
+    }
+}
+
+.red-border {
+    border: solid 12px $redColor;
+}
+
+.green-border {
+    border: solid 12px $greenColor;
+}
+
+.transparent-border {
+    border: solid 12px transparent;
+}

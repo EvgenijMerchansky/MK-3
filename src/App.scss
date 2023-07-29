@@ -1,0 +1,15 @@
+@import './helpers/_variables';
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Raleway&display=swap');
+
+* {
+  font-family: 'Press Start 2P', cursive;
+  font-family: 'Raleway', sans-serif;
+}
+
+.App {
+  text-align: center;
+  background: url('./assets/images/MKBG.jpg') no-repeat;
+  background-size: $backroundSiceCover;
+  height: 100vh;
+  overflow: hidden;
+}

@@ -1,0 +1,42 @@
+@import '../../helpers/_variables';
+
+.hero-overview {
+    width: $squeareSide;
+
+    .hero-overview-title {
+        font-style: italic;
+        color: $baseTextColor;
+        text-shadow: 2px 2px 2px $blackColor;
+    }
+
+    .hero-overview-img {
+        width: 250px;
+        height: 500px;
+    }
+
+    .reverse-image {
+        -moz-transform: scale(-1, -1);
+        -o-transform: scale(-1, -1);
+        -webkit-transform: scale(-1, -1);
+        transform: scale(-1, 1);
+    }
+
+    .hero-overview-hero-name {
+        color: $baseTextColor;
+        font-size: 24px;
+        font-style: italic;
+        font-weight: 600;
+        text-shadow: 2px 2px 2px $blackColor;
+        height: 100px;
+        margin-bottom: 0;
+    }
+
+    .selected {
+        color: green;
+        font-weight: $boldFontWeight;
+    }
+
+    .common {
+        color: $baseTextColor;
+    }
+}

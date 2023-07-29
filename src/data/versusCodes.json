@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "icon": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b1/Mortal_Kombat_Logo.svg/1200px-Mortal_Kombat_Logo.svg.png",
+        "key": "q"
+    },
+    {
+        "id": 2,
+        "icon": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b1/Mortal_Kombat_Logo.svg/1200px-Mortal_Kombat_Logo.svg.png",
+        "key": "w"
+    },
+    {
+        "id": 3,
+        "icon": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b1/Mortal_Kombat_Logo.svg/1200px-Mortal_Kombat_Logo.svg.png",
+        "key": "e"
+    },
+    {
+        "id": 4,
+        "icon": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b1/Mortal_Kombat_Logo.svg/1200px-Mortal_Kombat_Logo.svg.png",
+        "key": "r"
+    },
+    {
+        "id": 5,
+        "icon": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b1/Mortal_Kombat_Logo.svg/1200px-Mortal_Kombat_Logo.svg.png",
+        "key": "t"
+    },
+    {
+        "id": 6,
+        "icon": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b1/Mortal_Kombat_Logo.svg/1200px-Mortal_Kombat_Logo.svg.png",
+        "key": "y"
+    }
+]

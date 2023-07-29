@@ -1,0 +1,40 @@
+@import '../../helpers/_variables';
+
+@keyframes slide-in {
+    from {
+        transform: translateX(-100);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.hero-preview {
+    width: $hugeSquareSide;
+    text-align: center;
+    animation: slide-in 1s ease-out;
+
+    .hero-preview-img {
+        width: $hugeSquareSide;
+        height: $hugeSquareSide;
+    }
+
+    .hero-preview-img-reverse {
+        -moz-transform: scale(-1, -1);
+        -o-transform: scale(-1, -1);
+        -webkit-transform: scale(-1, -1);
+        transform: scale(-1, 1);
+    }
+
+    .hero-preview-name {
+        color: $baseTextColor;
+        font-size: 44px;
+        font-style: italic;
+        font-weight: 600;
+        text-shadow: 2px 2px 2px $blackColor;
+        height: auto;
+        margin-top: -30px;
+    }
+}
