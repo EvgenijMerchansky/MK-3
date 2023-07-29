@@ -2,7 +2,7 @@
   "name": "mk-3",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://evgenijmerchansky.github.io/mortal_kombat_3",
+  "homepage": "https://evgenijmerchansky.github.io/mortal_kombat_3/build/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
