@@ -12,6 +12,7 @@ type VersusCodesGridProps = { versusCodes: VersusCodeModel[], defaultVersusCode:
 const VersusCodesGrid: FC<VersusCodesGridProps> = ({ versusCodes, defaultVersusCode }) => {
     const rotationClassNames = 'rotation-active rotation-reverse-active';
     const [rotation, setRotation]: StateType<boolean> = useState<boolean>(false);
+    const [key, setKey]: StateType<string> = useState<string>("");
     const [selectedVersusCode, setSelectedVersusCode]: StateType<VersusCodeModel> = useState<VersusCodeModel>(defaultVersusCode);
 
     useEffect(() => {
@@ -19,7 +20,14 @@ const VersusCodesGrid: FC<VersusCodesGridProps> = ({ versusCodes, defaultVersusC
         return (): void => {
           document.removeEventListener('keydown', handleKeyPress);
         };
-      }, [rotation]);
+      }, []);
+
+
+    useEffect(() => {
+        if (!rotation && key !== "") {
+            rotateVersusCode(key);
+        }
+    }, [rotation, key]);
 
     const makeSound = (): any => new Audio(rotationSound).play();
 
@@ -45,7 +53,7 @@ const VersusCodesGrid: FC<VersusCodesGridProps> = ({ versusCodes, defaultVersusC
             case messages.r.defaultMessage:
             case messages.t.defaultMessage:
             case messages.y.defaultMessage:
-                if (!rotation) { rotateVersusCode(key); }
+                setKey(key);
             break;
             default:
             break;
