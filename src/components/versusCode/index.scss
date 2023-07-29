@@ -1,0 +1,43 @@
+@import '../../helpers/_variables';
+@keyframes rotate-horizontal {
+    from {
+        transform: scaleX(1);
+    }
+    to {
+        transform: scaleX(-1);
+    }
+}
+
+@keyframes rotate-horizontal-reverse {
+    from {
+        transform: scaleX(-1);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
+
+.versus-code {
+    width: 100px;
+    height: 100px;
+    list-style: none;
+    background-color: $baseTextColor;
+    border: solid 5px #212121;
+    margin: 2px;
+    
+    .versus-code-img {
+        width: inherit;
+        height: inherit;
+        background-size: $backroundSiceCover;
+    }
+}
+
+.rotation-active {
+    animation: rotate-horizontal .5s linear;
+    animation-fill-mode: forwards;
+}
+
+.rotation-reverse-active {
+    animation: rotate-horizontal-reverse .5s linear;
+    animation-fill-mode: forwards;
+}

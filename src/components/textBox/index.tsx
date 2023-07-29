@@ -1,12 +1,12 @@
 import { FC } from 'react';
 import './index.scss';
 
-type TextBoxProps = { message: string }
+type TextBoxProps = { message: string, classNames?: string }
 
-const TextBox: FC<TextBoxProps> = ({ message }) => {
+const TextBox: FC<TextBoxProps> = ({ message, classNames }) => {
   return (
     <div className='content'>
-        <h1 className='content-title'>{message}</h1>
+        <h1 className={`content-title ${classNames}`}>{message}</h1>
     </div>
   )
 }

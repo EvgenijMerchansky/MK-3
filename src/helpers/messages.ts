@@ -1,4 +1,4 @@
-export default {
+const messages = {
     arrowUp: {
         id: "arrowUp",
         defaultMessage: "ArrowUp"
@@ -62,5 +62,34 @@ export default {
     player: {
         id: "player",
         defaultMessage: "PLAYER"
+    },
+    q: {
+        id: "q",
+        defaultMessage: "q"
+    },
+    w: {
+        id: "w",
+        defaultMessage: "w"
+    },
+    e: {
+        id: "e",
+        defaultMessage: "e"
+    },
+    r: {
+        id: "r",
+        defaultMessage: "r"
+    },
+    t: {
+        id: "t",
+        defaultMessage: "t"
+    },
+    y: {
+        id: "y",
+        defaultMessage: "y"
+    },
+    battle: {
+        id: "battle",
+        defaultMessage: "BATTLE"
     }
 }
+export default messages;

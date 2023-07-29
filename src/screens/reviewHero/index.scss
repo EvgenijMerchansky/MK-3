@@ -1,0 +1,14 @@
+@import '../../helpers/_variables';
+
+.review-hero {
+    display: block;
+    width: $fullWidth;
+
+    .review-hero-heroes-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+    }
+}

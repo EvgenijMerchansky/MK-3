@@ -1,5 +1,7 @@
+@import '../../helpers/_variables';
+
 .contianer {
-    width: 100%;
+    width: $fullWidth;
 
     .content-wrapper {
         display: flex;

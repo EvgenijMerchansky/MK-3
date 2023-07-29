@@ -1,4 +1,4 @@
-export interface Hero {
+export interface HeroModel {
   id: number,
   name: string,
   icon: string,

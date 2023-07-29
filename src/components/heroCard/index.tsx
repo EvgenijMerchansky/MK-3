@@ -1,10 +1,10 @@
 import { FC } from 'react';
+import { HeroModel } from '../../models/HeroModel';
 import './index.scss';
-import { Hero } from '../../models/Hero';
 
-type CardProps = { hero: Hero, markedHeroId: number, playersCount: number, selectedHeroesCount: number }
+type HeroCardProps = { hero: HeroModel, markedHeroId: number, playersCount: number, selectedHeroesCount: number }
 
-export const Card: FC<CardProps> = ({ hero, markedHeroId, playersCount, selectedHeroesCount }) => {
+const HeroCard: FC<HeroCardProps> = ({ hero, markedHeroId, playersCount, selectedHeroesCount }) => {
   
   const firstHeroNoSeleted: boolean = selectedHeroesCount === 0,
         playerNumber: number | null = markedHeroId === hero.id && firstHeroNoSeleted ? 1 : markedHeroId === hero.id && !firstHeroNoSeleted ? 2 : null,
@@ -23,3 +23,4 @@ export const Card: FC<CardProps> = ({ hero, markedHeroId, playersCount, selected
     </td>
   )
 }
+export default HeroCard;
