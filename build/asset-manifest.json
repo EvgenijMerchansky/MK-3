@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/mortal_kombat_3/static/css/main.83dce046.css",
-    "main.js": "/mortal_kombat_3/static/js/main.842d8ad5.js",
-    "static/media/vs_screen.mp3": "/mortal_kombat_3/static/media/vs_screen.fd2a592cee443b328d10.mp3",
-    "static/media/select_hero.mp3": "/mortal_kombat_3/static/media/select_hero.3a65cd9943576337cd6e.mp3",
-    "static/media/MKBG.jpg": "/mortal_kombat_3/static/media/MKBG.2096c9447395c19a6d21.jpg",
-    "static/media/secret_code_rotation.mp3": "/mortal_kombat_3/static/media/secret_code_rotation.f2020d9fd7b25c0398d3.mp3",
-    "static/media/grid_move.mp3": "/mortal_kombat_3/static/media/grid_move.d03582661978831475ce.mp3",
-    "index.html": "/mortal_kombat_3/index.html",
-    "main.83dce046.css.map": "/mortal_kombat_3/static/css/main.83dce046.css.map",
-    "main.842d8ad5.js.map": "/mortal_kombat_3/static/js/main.842d8ad5.js.map"
+    "main.css": "/mortal_kombat_3/build/static/css/main.83dce046.css",
+    "main.js": "/mortal_kombat_3/build/static/js/main.842d8ad5.js",
+    "static/media/vs_screen.mp3": "/mortal_kombat_3/build/static/media/vs_screen.fd2a592cee443b328d10.mp3",
+    "static/media/select_hero.mp3": "/mortal_kombat_3/build/static/media/select_hero.3a65cd9943576337cd6e.mp3",
+    "static/media/MKBG.jpg": "/mortal_kombat_3/build/static/media/MKBG.2096c9447395c19a6d21.jpg",
+    "static/media/secret_code_rotation.mp3": "/mortal_kombat_3/build/static/media/secret_code_rotation.f2020d9fd7b25c0398d3.mp3",
+    "static/media/grid_move.mp3": "/mortal_kombat_3/build/static/media/grid_move.d03582661978831475ce.mp3",
+    "index.html": "/mortal_kombat_3/build/index.html",
+    "main.83dce046.css.map": "/mortal_kombat_3/build/static/css/main.83dce046.css.map",
+    "main.842d8ad5.js.map": "/mortal_kombat_3/build/static/js/main.842d8ad5.js.map"
   },
   "entrypoints": [
-    "static/css/main.83dce046.css",
-    "static/js/main.842d8ad5.js"
+    "build/static/css/main.83dce046.css",
+    "build/static/js/main.842d8ad5.js"
   ]
 }
