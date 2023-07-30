@@ -33,11 +33,11 @@
 }
 
 .rotation-active {
-    animation: rotate-horizontal .5s linear;
+    animation: rotate-horizontal $rotationTime linear;
     animation-fill-mode: forwards;
 }
 
 .rotation-reverse-active {
-    animation: rotate-horizontal-reverse .5s linear;
+    animation: rotate-horizontal-reverse $rotationTime linear;
     animation-fill-mode: forwards;
 }
