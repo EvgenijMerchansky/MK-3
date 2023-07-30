@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react';
+import { FC, useEffect, useState, useMemo } from 'react';
 import { VersusCodeModel } from '../../models/VersusCodeModel';
 import messages from '../../helpers/messages';
 import constants from '../../helpers/constants';
@@ -11,8 +11,8 @@ type VersusCodesGridProps = { versusCodes: VersusCodeModel[], defaultVersusCode:
 
 const VersusCodesGrid: FC<VersusCodesGridProps> = ({ versusCodes, defaultVersusCode }) => {
     const rotationClassNames = 'rotation-active rotation-reverse-active';
+    const [key, setKey]: StateType<string> = useState<string>('');
     const [rotation, setRotation]: StateType<boolean> = useState<boolean>(false);
-    const [key, setKey]: StateType<string> = useState<string>("");
     const [selectedVersusCode, setSelectedVersusCode]: StateType<VersusCodeModel> = useState<VersusCodeModel>(defaultVersusCode);
 
     useEffect(() => {
@@ -22,20 +22,25 @@ const VersusCodesGrid: FC<VersusCodesGridProps> = ({ versusCodes, defaultVersusC
         };
       }, []);
 
+    useEffect(() => {
+        if (key === '') return;
+        if (rotation) return;
+        setKey(key);
+        setRotation(rotation);
+        rotateVersusCode();
+    }, [key, rotation]);
 
     useEffect(() => {
-        if (!rotation && key !== "") {
-            rotateVersusCode(key);
-        }
-    }, [rotation, key]);
+        setSelectedVersusCode(selectedVersusCode);
+    }, [selectedVersusCode]);
 
     const makeSound = (): any => new Audio(rotationSound).play();
 
-    const rotateVersusCode = (key: string): void => {
+    const rotateVersusCode = (): void => {
         versusCodes.forEach((versusCode: VersusCodeModel) => {
-            if (versusCode.key === key) {
-                setSelectedVersusCode(versusCode);
+            if (versusCode.key === key && versusCode.id !== selectedVersusCode.id && !rotation) {
                 setRotation(true);
+                setSelectedVersusCode(versusCode);
                 makeSound();
                 setTimeout((): void => {
                     setRotation(false);
@@ -59,6 +64,11 @@ const VersusCodesGrid: FC<VersusCodesGridProps> = ({ versusCodes, defaultVersusC
             break;
         }
     }
+
+    // console.log('click', rotation);
+
+
+    // console.log(selectedVersusCode, 'selVerCode')
 
     return (
         <ul className='versus-codes'>

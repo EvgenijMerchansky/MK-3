@@ -16,7 +16,7 @@ const ReviewHeroScreen: FC<ReviewHeroScreenProps> = ({ heroes, setSecondScreenTo
 
   useEffect(() => {
     makeSound();
-    returnToStartScreen();
+    // returnToStartScreen();
   }, []);
 
   const makeSound = (): any => new Audio(vsSound).play();
